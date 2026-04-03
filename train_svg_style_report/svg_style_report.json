@@ -1,0 +1,290 @@
+{
+  "meta": {
+    "train_csv": "/root/submission.csv",
+    "output_dir": "./train_svg_style_report",
+    "total_rows": 1000,
+    "valid_rows": 1000,
+    "invalid_rows": 0
+  },
+  "length_stats": {
+    "count": 1000,
+    "min": 138,
+    "max": 14270,
+    "mean": 2800.057,
+    "median": 1135.0,
+    "p90": 9785.500000000002,
+    "p95": 12652.649999999998,
+    "p99": 13980.210000000001
+  },
+  "path_count_stats": {
+    "count": 1000,
+    "min": 0,
+    "max": 73,
+    "mean": 2.717,
+    "median": 2.0,
+    "p90": 5.0,
+    "p95": 8.0,
+    "p99": 21.039999999999964
+  },
+  "primitive_count_stats": {
+    "count": 1000,
+    "min": 0,
+    "max": 1,
+    "mean": 0.004,
+    "median": 0.0,
+    "p90": 0.0,
+    "p95": 0.0,
+    "p99": 0.0
+  },
+  "shape_count_stats": {
+    "count": 1000,
+    "min": 1,
+    "max": 73,
+    "mean": 2.721,
+    "median": 2.0,
+    "p90": 5.0,
+    "p95": 8.0,
+    "p99": 21.039999999999964
+  },
+  "tag_count_total_stats": {
+    "count": 1000,
+    "min": 2,
+    "max": 74,
+    "mean": 3.721,
+    "median": 3.0,
+    "p90": 6.0,
+    "p95": 9.0,
+    "p99": 22.039999999999964
+  },
+  "max_depth_stats": {
+    "count": 1000,
+    "min": 1,
+    "max": 1,
+    "mean": 1.0,
+    "median": 1.0,
+    "p90": 1.0,
+    "p95": 1.0,
+    "p99": 1.0
+  },
+  "path_cmd_count_per_svg_stats": {
+    "count": 1000,
+    "min": 0,
+    "max": 765,
+    "mean": 121.382,
+    "median": 48.0,
+    "p90": 385.0,
+    "p95": 508.0999999999999,
+    "p99": 739.01
+  },
+  "binary_flags_ratio": {
+    "path_only_svg": 0.996,
+    "has_primitive": 0.004
+  },
+  "top_tags": [
+    {
+      "key": "path",
+      "count": 2717
+    },
+    {
+      "key": "svg",
+      "count": 1000
+    },
+    {
+      "key": "rect",
+      "count": 4
+    }
+  ],
+  "top_attrs": [
+    {
+      "key": "fill",
+      "count": 2721
+    },
+    {
+      "key": "fill-opacity",
+      "count": 2717
+    },
+    {
+      "key": "filling",
+      "count": 2717
+    },
+    {
+      "key": "d",
+      "count": 2717
+    },
+    {
+      "key": "height",
+      "count": 1004
+    },
+    {
+      "key": "width",
+      "count": 1004
+    },
+    {
+      "key": "viewBox",
+      "count": 1000
+    }
+  ],
+  "top_path_commands": [
+    {
+      "key": "L",
+      "count": 56664
+    },
+    {
+      "key": "C",
+      "count": 44818
+    },
+    {
+      "key": "A",
+      "count": 6882
+    },
+    {
+      "key": "M",
+      "count": 6620
+    },
+    {
+      "key": "Z",
+      "count": 6398
+    }
+  ],
+  "top_color_types": [
+    {
+      "key": "fill::hex",
+      "count": 2214
+    },
+    {
+      "key": "fill::currentColor",
+      "count": 483
+    },
+    {
+      "key": "fill::none",
+      "count": 20
+    },
+    {
+      "key": "fill::named_or_other",
+      "count": 4
+    }
+  ],
+  "top_fill_values": [
+    {
+      "key": "currentColor",
+      "count": 483
+    },
+    {
+      "key": "#000000",
+      "count": 390
+    },
+    {
+      "key": "#ffffff",
+      "count": 282
+    },
+    {
+      "key": "#333333",
+      "count": 154
+    },
+    {
+      "key": "#444444",
+      "count": 144
+    },
+    {
+      "key": "#eeeeee",
+      "count": 79
+    },
+    {
+      "key": "#555555",
+      "count": 65
+    },
+    {
+      "key": "#ffffee",
+      "count": 57
+    },
+    {
+      "key": "#666677",
+      "count": 47
+    },
+    {
+      "key": "#666666",
+      "count": 34
+    },
+    {
+      "key": "#334455",
+      "count": 33
+    },
+    {
+      "key": "#223344",
+      "count": 28
+    },
+    {
+      "key": "#002244",
+      "count": 28
+    },
+    {
+      "key": "#999999",
+      "count": 27
+    },
+    {
+      "key": "#335555",
+      "count": 27
+    },
+    {
+      "key": "#444455",
+      "count": 25
+    },
+    {
+      "key": "#ffcc00",
+      "count": 25
+    },
+    {
+      "key": "#eeffff",
+      "count": 23
+    },
+    {
+      "key": "#555566",
+      "count": 21
+    },
+    {
+      "key": "#333344",
+      "count": 21
+    },
+    {
+      "key": "none",
+      "count": 20
+    },
+    {
+      "key": "#222233",
+      "count": 19
+    },
+    {
+      "key": "#888888",
+      "count": 19
+    },
+    {
+      "key": "#222222",
+      "count": 19
+    },
+    {
+      "key": "#ff9933",
+      "count": 19
+    },
+    {
+      "key": "#111111",
+      "count": 17
+    },
+    {
+      "key": "#334444",
+      "count": 15
+    },
+    {
+      "key": "#dddddd",
+      "count": 15
+    },
+    {
+      "key": "#223333",
+      "count": 13
+    },
+    {
+      "key": "#cccccc",
+      "count": 13
+    }
+  ],
+  "top_stroke_values": []
+}
