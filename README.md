@@ -10,6 +10,135 @@ My final system is a **hybrid pipeline** that combines:
 This approach significantly improves robustness and leaderboard performance under constrained model size and compute budget.
 
 ---
+## 📁 Repository Structure
+
+```text
+test.csv                      
+train.csv
+final_results/             # final submission outputs
+
+train_svg_style_report/    # SVG data analysis results
+
+analyze_train_svg_style.py # dataset analysis script
+prompts.py                 # extract prompts from test.csv
+inference.py               # OmniSVG inference script
+replace_submission_by_prompt_similarity.py  # retrieval-based replacement
+
+config.py / config.yaml    # model configuration
+dataset.py                 # dataset processing
+tokenizer.py               # tokenization logic
+
+assets/                    # optional assets (figures, visuals)
+
+README.md                  # project documentation
+requirements.txt           # dependencies
+Negative Results and Failure Analysis/ #Three Failed Plans
+```
+## 📦 Model Weights Setup
+
+Before running the pipeline, download the required pretrained models.
+
+---
+
+### 🔹 1. Download OmniSVG (Required)
+
+```bash
+pip install -U huggingface_hub
+
+hf download OmniSVG/OmniSVG1.1_4B \
+  --local-dir ./models/OmniSVG1.1_4B
+
+hf download Qwen/Qwen2.5-VL-3B-Instruct \
+  --local-dir ./models/Qwen2.5-VL-3B-Instruct
+```
+
+## ⚡ Quick Start
+
+### 1. Setup Environment
+
+```bash
+git clone https://github.com/shuhancai183/DL-Spring-2026-SVG-Generation-from-Text-Prompts
+cd https://github.com/shuhancai183/DL-Spring-2026-SVG-Generation-from-Text-Prompts
+
+pip install -r requirements.txt
+```
+
+---
+
+### 2. Prepare Data
+
+Make sure the following files exist:
+
+```text
+train.csv
+test.csv
+```
+
+---
+
+### 3. Run Full Pipeline (Recommended)
+
+```bash
+python run_all.py
+```
+
+---
+
+## 🔁 What run_all.py Does
+
+The script executes the full pipeline:
+
+1. Extract prompts from `test.csv`
+2. Run OmniSVG inference to generate SVGs
+3. Build `submission.csv`
+4. Apply similarity-based replacement (threshold = 0.98)
+5. Output final submission
+
+---
+
+## 📂 Final Output
+
+```text
+final_results/submission_replace_th_0.98.csv
+```
+
+---
+
+## ⚠️ Requirements
+
+Ensure the following files exist before running:
+
+```text
+train.csv
+test.csv
+config.yaml
+```
+
+---
+
+## 💡 Notes
+
+* GPU is recommended for faster inference
+* The pipeline preserves prompt order automatically
+* Intermediate SVG outputs are stored in `output_text/`
+* Threshold = 0.98 is selected based on ablation study
+
+
+---
+
+## 🏁 Final Submission
+
+```
+id,svg
+```
+
+Example:
+
+```
+final_results/submission_replace_th_0.98.csv
+```
+
+---
 
 ## 🔍 Training Data Analysis
 
@@ -251,142 +380,6 @@ my method:
 * avoids generation errors
 * leverages high-confidence matches
 * balances precision and coverage
-
----
-
-## 📁 Repository Structure
-
-```text
-test.csv                      
-train.csv
-final_results/             # final submission outputs
-
-train_svg_style_report/    # SVG data analysis results
-  ├── svg_style_report.json
-  ├── per_svg_metrics.csv
-  ├── tag_distribution.csv
-  ├── attr_distribution.csv
-  ├── path_command_distribution.csv
-  └── stroke_values.csv
-
-analyze_train_svg_style.py # dataset analysis script
-prompts.py                 # extract prompts from test.csv
-inference.py               # OmniSVG inference script
-replace_submission_by_prompt_similarity.py  # retrieval-based replacement
-
-config.py / config.yaml    # model configuration
-dataset.py                 # dataset processing
-tokenizer.py               # tokenization logic
-
-assets/                    # optional assets (figures, visuals)
-
-README.md                  # project documentation
-requirements.txt           # dependencies
-Negative Results and Failure Analysis/ #Three Failed Plans
-```
-## 📦 Model Weights Setup
-
-Before running the pipeline, download the required pretrained models.
-
----
-
-### 🔹 1. Download OmniSVG (Required)
-
-```bash
-pip install -U huggingface_hub
-
-hf download OmniSVG/OmniSVG1.1_4B \
-  --local-dir ./models/OmniSVG1.1_4B
-
-hf download Qwen/Qwen2.5-VL-3B-Instruct \
-  --local-dir ./models/Qwen2.5-VL-3B-Instruct
-```
-
-## ⚡ Quick Start
-
-### 1. Setup Environment
-
-```bash
-git clone https://github.com/shuhancai183/DL-Spring-2026-SVG-Generation-from-Text-Prompts
-cd https://github.com/shuhancai183/DL-Spring-2026-SVG-Generation-from-Text-Prompts
-
-pip install -r requirements.txt
-```
-
----
-
-### 2. Prepare Data
-
-Make sure the following files exist:
-
-```text
-train.csv
-test.csv
-```
-
----
-
-### 3. Run Full Pipeline (Recommended)
-
-```bash
-python run_all.py
-```
-
----
-
-## 🔁 What run_all.py Does
-
-The script executes the full pipeline:
-
-1. Extract prompts from `test.csv`
-2. Run OmniSVG inference to generate SVGs
-3. Build `submission.csv`
-4. Apply similarity-based replacement (threshold = 0.98)
-5. Output final submission
-
----
-
-## 📂 Final Output
-
-```text
-final_results/submission_replace_th_0.98.csv
-```
-
----
-
-## ⚠️ Requirements
-
-Ensure the following files exist before running:
-
-```text
-train.csv
-test.csv
-config.yaml
-```
-
----
-
-## 💡 Notes
-
-* GPU is recommended for faster inference
-* The pipeline preserves prompt order automatically
-* Intermediate SVG outputs are stored in `output_text/`
-* Threshold = 0.98 is selected based on ablation study
-
-
----
-
-## 🏁 Final Submission
-
-```
-id,svg
-```
-
-Example:
-
-```
-final_results/submission_replace_th_0.98.csv
-```
 
 ---
 
