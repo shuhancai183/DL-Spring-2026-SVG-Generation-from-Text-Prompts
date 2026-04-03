@@ -1,0 +1,10 @@
+{
+  "total_parameters": 3846914048,
+  "total_parameters_human": "3.8469B",
+  "trainable_parameters": 3846914048,
+  "trainable_parameters_human": "3.8469B",
+  "frozen_parameters": 0,
+  "frozen_parameters_human": "0",
+  "less_than_4B": true,
+  "less_than_or_equal_2B": false
+}
