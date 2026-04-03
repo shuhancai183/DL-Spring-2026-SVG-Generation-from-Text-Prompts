@@ -307,8 +307,8 @@ hf download Qwen/Qwen2.5-VL-3B-Instruct \
 ### 1. Setup Environment
 
 ```bash
-git clone <your-repo-url>
-cd <your-repo>
+git clone https://github.com/shuhancai183/DL-Spring-2026-SVG-Generation-from-Text-Prompts
+cd https://github.com/shuhancai183/DL-Spring-2026-SVG-Generation-from-Text-Prompts
 
 pip install -r requirements.txt
 ```
